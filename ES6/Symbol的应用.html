@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+
+  // symbol 对于iterator的应用
+  let myIterable = {}
+  myIterable[Symbol.iterator] = function * () {
+    yield 1;
+    yield {};
+    yield 3;
+  };
+  console.log(myIterable);
+  console.log([...myIterable]);
+
+
+  class MyArray {
+    static [Symbol.hasInstance](instance) {
+      return Array.isArray(instance)
+    }
+  }
+  console.log([] instanceof MyArray);
+
+  console.log(Symbol.prototype);
+
+  typeof Symbol() === 'symbol'
+  typeof Symbol('foo') === 'symbol'
+  typeof Symbol.iterator === 'symbol'
+
+  // Symbol('good') + 'luck' 
+
+  // symbol属性不可枚举
+  let obj = {}
+  obj[Symbol('a')] = 'a'
+  obj[Symbol.for('b')] = 'b'
+  obj['c'] = 'c'
+  obj.d = 'd'
+
+  for (const iterator in obj) {
+    console.log(iterator);
+  }
+
+
+</script>

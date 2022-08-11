@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+
+  async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+      method: 'post',
+      mode: 'cors',
+      caches: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data)
+    });
+    return response.json()
+  }
+  
+  // postData("https://www.baidu.com", {})
+  //   .then(res => {
+  //     console.log(res);
+  //   })
+
+  async function getData(url = '', data = '') {
+    const response = await fetch(url + data)
+
+    return response.json()
+  }
+  
+  getData("https://www.baidu.com/s?wd=", 1)
+    .then(res => {
+      console.log(res);
+    })
+</script>

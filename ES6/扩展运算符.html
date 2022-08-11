@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+</html>
+<script>
+  // ...实参 作为扩展运算符 可以将数组转化为参数序列传入函数
+  let sports = ['跑步', '跳远', '铅球'];
+
+  function fn() {
+    console.log(arguments);
+    console.log([...arguments]);
+  }
+  // fn(sports)
+  fn(...sports)
+
+  // 扩展运算符的应用
+  // 数组的合并
+  let arr1 = [1, 2, 3]
+  let arr2 = [4, 5, 6]
+  console.log([...arr1, ...arr2]);
+
+  // 数组的克隆
+  let arr3 = [...arr2]
+  console.log(arr3); // 如果数组中存在引用数据类型 则进行浅拷贝
+
+  // 将伪数组转化为真数组
+  let divs = document.querySelectorAll('div');
+  console.log(divs);
+  let divarr = [...divs]
+  console.log(divarr);
+
+</script>

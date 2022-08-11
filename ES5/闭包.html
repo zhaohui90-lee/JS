@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 闭包
+  // 一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。
+  // 也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域。在 JavaScript 中，每当创建一个函数，闭包就会在函数创建的同时被创建出来。
+
+  // 延伸了变量的作用范围
+  function fn() {
+    var num = 10;
+    // function fun() {
+    //   console.log(num);
+    // }
+    // fun()
+    // return fun
+    return function() {
+      console.log(num);
+    }
+  }
+  var f = fn() // -> f = function() {console.log(num)}
+  f()
+</script>

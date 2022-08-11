@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 本地储存
+  localStorage.setItem("name", "zhangsan")
+  // 获取本地储存
+  localStorage.getItem("name")
+  // 移除本地储存
+  localStorage.removeItem("name")
+
+  // 会话储存
+  sessionStorage.setItem('name1', 'lisi')
+  // 获取会话储存
+  sessionStorage.getItem('name1')
+  // 移除会话储存
+  sessionStorage.removeItem('name1')
+
+  // 本地存储和会话存储之间唯一的主要区别是，一旦我们关闭浏览器，我们就会丢失会话存储中保存的任何内容。但是，本地存储并非如此。
+
+
+  // Cookies
+  //  1、大小限制：4KB
+  //  2、默认情况下，关闭浏览器，数据会消失
+  //  3、只能存储字符串类型，一般存储的是数据库中的某个主键id
+  //  4、用途：用户在登陆某个网站系统的情况下（而且要指定Cookie失效时间），关闭浏览器，再次打开同样的页面，不必再次输入密码，即可进入同样的页面。
+</script>

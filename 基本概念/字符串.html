@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>press me!</button>
+</body>
+</html>
+<script>
+  let btn = document.querySelector('button');
+  btn.onclick = function() {
+    let name = prompt('what is your name?');
+    alert('hello' + name + ' !!!')
+  }
+  
+  let s = '12313N';
+  console.log(Number(s)); // NaN
+  console.log(Number('123123'));
+
+  // 字符串的方法
+  let browserType = 'mozilla';
+  console.log(browserType.length);
+  console.log(browserType[0]);
+  console.log(typeof browserType);
+  console.log(browserType.indexOf('zil'));
+  console.log(browserType.slice(1, 4));
+
+  
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>change color</button>
+</body>
+</html>
+<script>
+  /**
+   * 其他事件概念
+   *  事件对象: 有时候在事件处理函数内部，您可能会看到一个固定指定名称的参数，例如event，evt或简单的e。 
+   *           这被称为事件对象，它被自动传递给事件处理函数，以提供额外的功能和信息。
+   * 
+   * */ 
+   const btn = document.querySelector('button');
+
+  function random(number) {
+    return Math.floor(Math.random()*(number+1));
+  }
+
+   btn.addEventListener('click', function(e) {
+    const rndColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    document.body.style.backgroundColor = rndColor;
+    console.log(e);
+  })
+  /**
+   * 阻止默认事件
+   *  e.prenvetDefault()
+   * 
+  */
+
+  /**
+   * 事件冒泡和捕获
+   * 
+   * 
+  */
+</script>

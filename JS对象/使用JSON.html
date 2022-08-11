@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  /**
+   * JSON 是一种按照JavaScript对象语法的数据格式，这是 Douglas Crockford 推广的。
+   * 
+   * JSON结构
+   *  
+  */
+  let obj = {
+    "squadName" : "Super hero squad",
+    "homeTown" : "Metro City",
+    "formed" : 2016,
+    "secretBase" : "Super tower",
+    "active" : true,
+    "members" : [
+      {
+        "name" : "Molecule Man",
+        "age" : 29,
+        "secretIdentity" : "Dan Jukes",
+        "powers" : [
+          "Radiation resistance",
+          "Turning tiny",
+          "Radiation blast"
+        ]
+      },
+      {
+        "name" : "Madame Uppercut",
+        "age" : 39,
+        "secretIdentity" : "Jane Wilson",
+        "powers" : [
+          "Million tonne punch",
+          "Damage resistance",
+          "Superhuman reflexes"
+        ]
+      },
+      {
+        "name" : "Eternal Flame",
+        "age" : 1000000,
+        "secretIdentity" : "Unknown",
+        "powers" : [
+          "Immortality",
+          "Heat Immunity",
+          "Inferno",
+          "Teleportation",
+          "Interdimensional travel"
+        ]
+      }
+    ]
+  }
+  // JSON访问数据
+  let home = obj.homeTown;
+  let flag = obj['active'];
+  console.log(home, flag);
+  // 访问对象中的对象 可以使用链式访问
+  let s = obj["members"][1]["powers"][2];
+  console.log(s);
+
+  // 
+  var obj2 = {
+    "name": "zhangsan"
+  }
+  console.log(obj2);
+
+  // 交易
+
+  let requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+
+  let request = new XMLHttpRequest();
+
+  request.open('get', requestURL);
+
+  request.responseType = 'json';
+
+  request.send();
+
+  request.onload = function(e) {
+    console.log(request);
+    if(request.status >= 200 && request.status < 300) {
+      let heroes = request.response;
+      console.log(heroes);
+      // 转化为object
+      let heroesObj = JSON.stringify(heroes);
+      console.log(heroesObj);
+    }
+  }
+</script>

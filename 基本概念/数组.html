@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 字符串和数组之间的转换
+  let myData = 'Manchester,London,Liverpool,Birmingham,Leeds,Carlisle';
+  let myNewArray = myData.split(',');
+  console.log(myNewArray);
+  let myNewData = myNewArray.join('@');
+  console.log(myNewData);
+  // 使用tostring()方法转化数组为字符串
+  console.log(myNewArray.toString());
+
+  // 添加和删除数组的方法
+  let myArray = ['Manchester', 'London', 'Liverpool', 'Birmingham', 'Leeds', 'Carlisle'];
+  console.log(myArray);
+  myArray.push('Cardiff');
+  console.log(myArray);
+  myArray.push('Bradford', 'Brighton');
+  console.log(myArray);
+  myArray.pop();
+  console.log(myArray);
+  // unshift shift
+  myArray.unshift('Edinburgh')
+  console.log(myArray);
+  myArray.unshift('aaa', 'cccc');
+  console.log(myArray);
+  myArray.shift()
+  console.log(myArray);
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // var 全局或者方法级作用域
+  let x = 'global';
+  var y = 'global';
+  // console.log(this);
+  console.log(this.x); // undefined
+  console.log(this.y); // global
+
+  // var -- 变量提升
+  // 由于变量声明（以及其他声明）总是在任意代码执行之前处理的，
+  // 所以在代码中的任意位置声明变量总是等效于在代码开头声明。这意味着变量可以在声明之前使用，这个行为叫做“hoisting”
+
+  // 重要的是，提升将影响变量声明，而不会影响其值的初始化。当到达赋值语句时，该值将确实被分配：
+  (function f1() {
+    console.log(bar); // undefined
+    var bar = 11;
+    console.log(bar); // 11
+  })()
+
+  var m = n, n = 'A';
+  console.log(m + n);
+
+  var xx = 0;
+  function f() {
+    // var xx = yy = 1; 等价于 yy = 1; var xx = 1;
+    yy = 1; // 在全局window上赋值的变量
+    var xx = 1; // 在函数f内部初始化的变量
+  }
+  f()
+  console.log(xx, yy); // 0 1
+  console.log(this);
+
+
+  // let -- 不适用变量提升
+  // 块级作用域 是在编译以后才会初始化
+</script>

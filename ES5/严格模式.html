@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 声明严格模式
+  'use strict';
+  // 我们的变量必须先声明后使用
+  var num = 10
+  console.log(10);
+
+  // 不能删除已经声明的变量
+  // delete num; // error
+
+  // 严格模式中的全局作用域中的函数的this指向 undefined
+  function fn(params) {
+    console.log(this);
+  }
+  fn()
+  // 严格模式下 构造函数不加new 使用this指向undefined 赋值 会报错
+  function Star(uname) {
+    this.uname = uname
+  }
+  // 定时器中的this指向的还是window
+  
+  // 严格模式下函数中的不允许出现相同命名的参数
+  // function fun(a, a) {
+  //   console.log(a + a);
+  // }
+</script>

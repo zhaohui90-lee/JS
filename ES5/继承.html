@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // ES6之前 函数的继承遵循原型链的形式
+
+    // 父构造函数
+    function Father(uname, age) {
+      this.uname = uname
+      this.age = age
+    }
+
+    Father.prototype.money = function () {
+      console.log(10000);
+    }
+
+    // 子构造函数
+    function Son(uname, age, score) {
+      // this指向子构造函数
+      Father.call(this, uname, age)
+      // 可以有自己的属性
+      this.score = score
+    }
+    // Son.prototype = new Father()
+      Son.prototype = Object.getPrototypeOf(Father.prototype)
+    // 修改Son的原型对象指向问题 指向原来的构造函数
+    Son.prototype.constructor = Son
+    Son.prototype.exam = function () {
+      console.log('exam...');
+    }
+    let son = new Son('张三', 20, 100)
+    console.log(son);
+    // console.log(Father.prototype);
+  </script>
+</body>
+</html>

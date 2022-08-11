@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 数组的结构
+  const COLORS = ['red', 'blue', 'yellow', 'green'];
+  let [c1, c2, c3, c4] = COLORS
+  console.log(c1);
+  console.log(c2);
+  console.log(c3);
+  console.log(c4);
+
+  // 对象的结构
+  const STUDENT = {
+    name: '李四',
+    age: 18,
+    exam: function (params) {
+      console.log('exam...');
+    }
+  }
+
+  let {name, age, exam} = STUDENT
+  console.log(name);
+  console.log(age);
+  console.log(exam.prototype);
+  exam()
+</script>

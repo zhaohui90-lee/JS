@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas class="my-canvas">
+    <p>你的浏览器不支持canvas</p>
+  </canvas>
+</body>
+</html>
+<style>
+  /* 
+    删除window的外边框
+    去除滚动条
+   */
+   body {
+     margin: 0;
+     overflow: hidden;
+   }
+</style>
+<script>
+  /***
+   * 使用canvas绘制图形
+  */
+  var canvas = document.querySelector('.my-canvas');
+  var width = canvas.width = window.innerWidth;
+  var height = canvas.height = window.innerHeight;
+  /**
+   * 获取画布上下文 并且完成配置
+   * 画布模板设置还有最后一步。我们需要获得一个对绘画区域的特殊的引用（称为“上下文”）用来在画布上绘图。
+   * 可通过 HTMLCanvasElement.getContext() 方法获得基础的绘画功能，需要提供一个字符串参数来表示所需上下文的类型。
+  */
+  var ctx = canvas.getContext('2d');
+  console.log(ctx);
+  ctx.fillStyle = 'rgb(0, 0, 0)';
+  ctx.fillRect(0, 0, width, height);
+  /**
+   * 这里我们使用画布的 fillStyle 属性（和CSS属性 色值 一致）设置填充色，然后使用 fillRect 方法
+   * 绘制一个覆盖整个区域的矩形（前两个参数是矩形左上顶点的坐标，后两个参数是矩形的长宽，现在你知道 width 和 height 的作用了吧）。
+  */
+  
+</script>

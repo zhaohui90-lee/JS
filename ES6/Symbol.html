@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // javascript数据类型
+  //  六种基本数据类型 String Number Boolean BigInt undefined
+  //  三种引用数据类型 null Object Function
+
+  // 声明和特性
+  const symbol1 = Symbol()
+  const symbol2 = Symbol(100)
+  const symbol3 = Symbol('name')
+
+  console.log(symbol1, typeof symbol1);
+  console.log(symbol2, typeof symbol2);
+  console.log(symbol3, typeof symbol3);
+  console.log(symbol3.toString());
+  console.log(Symbol('foo') === Symbol('foo')); // false
+
+  // 语法 Symbol([description])
+  // Symbol()函数会返回symbol类型的值，该类型具有静态属性和静态方法。它的静态属性会暴露几个内建的成员对象；
+  // 它的静态方法会暴露全局的symbol注册，且类似于内建对象类，但作为构造函数来说它并不完整，因为它不支持语法："new Symbol()"。
+  
+</script>

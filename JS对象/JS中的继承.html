@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  /**
+   * 原型式的继承
+   *  
+  */
+  function Person(first, last, age, gender, interests) {
+    this.name = {
+      first,
+      last
+    };
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+  };
+  // 方法定义在构造函数的原型上
+  Person.prototype.greeting = function() {
+    console.log('hello, i am ', this.name.first, ' .');
+  }
+  // 定义继承Person的Teather函数
+  function Teacher(first, last, age, gender, interests, subject) {
+    Person.call(this, first, last, age, gender, interests);
+    this.subject = subject;
+  }
+  
+  // 设置Teacher的原型和构造引用 构造函数指向的是Person
+  Teacher.prototype = Object.create(Person.prototype)
+  // 重新指向构造对象
+  Teacher.prototype.constructor = Teacher;
+
+  let t = new Teacher('a', 'b', 30, 'man', 'run', 'math');
+  console.log(t);
+  t.greeting();
+  /**
+   * 无参构造函数继承
+   * 
+  */
+  function Brick() {
+    this.width = 10;
+    this.height = 20;
+  }
+  function BlueGlassBrick() {
+    Brick.call(this);
+    console.log(this); // BlueGlassBrick
+    this.opacity = 0.5;
+    this.color = 'blue';
+  }
+  let blueBrick = new BlueGlassBrick()
+  // console.log(blueBrick);
+  // console.log(BlueGlassBrick.prototype.constructor);
+  // console.log(BlueGlassBrick);
+
+</script>

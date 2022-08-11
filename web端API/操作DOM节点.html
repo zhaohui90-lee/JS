@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+    <img src="" alt="">
+    <p>
+      <a href="#"></a>
+    </p>
+  </section>
+</body>
+</html>
+<script>
+  var link = document.querySelector('a');
+  console.log(link);
+  link.textContent = '这是节点的新内容！';
+  link.href = 'https://www.baidu.com';
+
+  // 创建并且放置新的节点
+  var sect = document.querySelector('section');
+  var para = document.createElement('p');
+  para.textContent = '这是新的p节点';
+  sect.appendChild(para);
+
+  var text = document.createTextNode(' — the premier source for web development knowledge.');
+  var linkPara = document.querySelector('p');
+  linkPara.appendChild(text);
+
+  // 操作样式
+
+  
+</script>

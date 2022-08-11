@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正则表达式</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // let reg = 'aaa\dccc';
+  let reg = new RegExp('aaa\\d{1,2}ccc')
+  
+  console.log(reg.test('aaa0ccc'));
+
+  // \d 数字
+  // \D 非数字
+  // \w 表示一个字母（大小写均可）、数字，或下划线。
+  // \W 与 \w 相反，表示这个位置的字符既不是字母、数字，也不是下划线。 也就是：特殊符号（除下划线），或者空格等满足。
+  // \s 表示匹配一个看不见的符号，即空格或制表符（Tab键）
+  // \S 与 \s 相反，表示一个可以看得见的符号。
+  // . (小数点) 则表示“\n”和"\r"之外的任何单个字符。
+  // | (竖线) 则表示或的关系，表示检测的字符串须满足其中一个时，才符合条件。
+  // [ ] 表示匹配其中任意一个字符。
+  // [^ ] 表示不与中括号里的任意字符匹配。
+  // [值1-值2] 则表示值1到值2中间的所有字符都满足（包括值1和值2）。常用该正则来表示大小写字母范围，数字范围。
+  // [^值1-值2] 则表示除值1和值2之外的所有字符，都可以满足。
+  // ? 表示匹配前面的子表达式零次或一次。
+  let reg1 = new RegExp('111\\D222')
+  console.log(reg1.test('111d222'));
+
+</script>

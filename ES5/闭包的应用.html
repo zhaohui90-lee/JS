@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul class="nav">
+    <li>篮球</li>
+    <li>足球</li>
+    <li>羽毛球</li>
+    <li>乒乓球</li>
+  </ul>
+</body>
+</html>
+<script>
+  var lis = document.querySelector('.nav').querySelectorAll('li');
+  // for (let i = 0; i < lis.length; i++) {
+  //   lis[i].onclick = function() {
+  //     console.log(i);
+  //   }
+  // }
+
+  for (var i = 0; i < lis.length; i++) {
+    // lis[i].index = i
+    lis[i].onclick = function() {
+      console.log(this);
+    }
+  }
+
+  // for (var i = 0; i < lis.length; i++) {
+  //   (function(i) {
+  //     lis[i].onclick = function() {
+  //       console.log(i);
+  //     }
+  //   })(i)
+  // }
+</script>

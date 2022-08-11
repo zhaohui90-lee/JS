@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 可以改变this指向 
+  // 语法： fn.apply(thisArg, [arrayArgs])
+  let obj = {
+    name: 'jack',
+    age: 18,
+    sex: '男'
+  }
+
+  function fn(param) {
+    console.log(this);
+    console.log(param);
+  }
+
+  fn.apply(obj)
+
+  // let arraylike = {
+  //   '0': 'a',
+  //   '1': 'b',
+  //   '2': 'c',
+  //   length: 3
+  // }
+  // console.log(arraylike);
+  // let arr = Array.from(arraylike)
+  // console.log(arr);
+  fn.apply(obj, ['1', '2', '3'])
+  // fn.apply(obj, arraylike)
+
+  // apply的应用
+  let arr = [1, 22, 44, 90, 3]
+  let max = Math.max(...arr)
+  console.log(max);
+  max = Math.max.apply(Math, arr)
+  let min = Math.min.apply(Math, arr)
+  console.log(max, min);
+
+
+  
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 箭头函数不绑定this关键字  箭头函数中的this  指向的是函数定义中上下文中的this
+  let obj = {
+    age: 20,
+    fn: () => {
+      console.log(this.age); // 因为对象不产生作用域 这里的this指向的是全局作用域window
+    }
+  }
+
+  obj.fn() // undefined
+
+  // 剩余参数
+  // 剩余参数语法允许我们将一个不定数量的参数表示为一个数组
+  let sum = (...args) => {
+    let total = 0;
+    args.forEach(item => total += item)
+    return total
+  }
+
+  console.log(sum(1,2,3,4));
+  console.log(sum(10,20));
+</script>

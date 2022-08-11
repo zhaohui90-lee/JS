@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>change color</button>
+</body>
+</html>
+<script>
+  const btn = document.querySelector('button');
+
+  function random(number) {
+    return Math.floor(Math.random()*(number+1));
+  }
+
+  // btn.onclick = function() {
+  //   const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+  //   // const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  //   document.body.style.backgroundColor = rndCol;
+  // }
+
+  // addEventListener() 和removeEventListener()
+  btn.addEventListener('click', function() {
+    // const rndColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    const rndColor = '#dcdde1';
+    document.body.style.backgroundColor = rndColor;
+  })
+  // 清除事件
+  // btn.removeEventListener('click', bgChange);
+
+  // addEventListener可以同时绑定多个事件
+  btn.addEventListener('click', function() {
+    console.log('改变背景颜色...');
+  })
+
+
+
+</script>

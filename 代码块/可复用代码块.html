@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./first.js"></script>
+  <script src="./second.js"></script>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 函数表达式和函数声明
+  // 匿名函数也称为函数表达式。函数表达式与函数声明有一些区别。函数声明会进行声明提升（declaration hoisting），而函数表达式不会。
+
+  f1() // 函数声明提升
+
+  function f1() {
+    console.log('f1...');
+  }
+
+  // f2() Uncaught TypeError: f2 is not a function
+
+  var f2 = function() {
+    console.log('f2...');
+  }
+
+  f2()
+  greeting()
+
+  // 函数内部的调用 -- 通常被用作保持代码简介的方法 -- 可以将复杂的逻辑代码简介化
+  function myBigFunction() {
+    var myValue;
+
+    subFunction1();
+    subFunction2();
+    subFunction3();
+  }
+  function subFunction1() {
+    console.log(myValue);
+  }
+
+  function subFunction2() {
+    console.log(myValue);
+  }
+
+  function subFunction3() {
+    console.log(myValue);
+  }
+</script>

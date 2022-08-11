@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 正则表达式在js中的作用
+
+  // 创建正则表达式
+  const regexp = new RegExp(/123/)
+  console.log(regexp);
+
+  const rg = /123/
+  console.log(rg.test(123))
+  console.log(rg.test('123'));
+  
+
+  // ^ 开始字符 $ 收尾字符
+  const reg = /^abc$/ // 表示必须是abc开始 且是abc结尾
+
+  // /[abc]/ 表示 a b c任意一个字符符合即可
+  // /^[abc]$/ 表示 a b c三个字符之中任意选择一个开始或者结尾
+  const reg1 = /[abc]/
+  console.log(reg1.test('abcabc'));
+
+  const reg2 = /^[abc]$/
+  console.log(reg2.test('a')); // true
+  console.log(reg2.test('b')); // true
+  console.log(reg2.test('c')); // true
+  console.log(reg2.test('abc')); // false
+
+  console.log('-------------');
+
+  const reg3 = /^[a-z]$/ // 26个英文字母任意一个返回true 
+  console.log(reg3.test('z'));
+
+  // 字符组合
+  const reg4 = /^[a-zA-Z0-9]$/
+  console.log('-------------');
+
+  console.log(reg4.test('0'));
+
+  console.log('-------------');
+  // 取反标识符
+  const reg5 = /^[^a-zA-Z0-9]$/
+
+  
+</script>

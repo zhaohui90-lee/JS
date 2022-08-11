@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Object.defineProperty 重新定义或者修改对象中的属性
+    // 语法： Object.defineProperty(obj, prop, descriptor)
+    let obj = {
+      id: 1,
+      pname: 'apple',
+      price: 1999
+    }
+    Object.defineProperty(obj, 'num', {
+      value: 999
+    })
+    Object.defineProperty(obj, 'id', {
+      writable: false // true|false 默认为false 不可以被修改
+    })
+    console.log(obj);
+    Object.defineProperty(obj, 'address', {
+      value: '浙江杭州西湖',
+      enumerable: false, // 默认为false 不允许遍历
+      configurable: false // 不允许被修改特性 删除
+    })
+    console.log(obj);
+    console.log(Object.keys(obj));
+    delete obj.address
+    console.log(obj);
+    delete obj.pname
+    console.log(obj);
+
+    var anObj = { 100: 'a', 2: 'b', 7: 'c' };
+    console.log(Object.keys(anObj)); // console: ['2', '7', '100']
+  </script>
+</body>
+
+</html>

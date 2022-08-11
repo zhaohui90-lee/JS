@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>点击</button>
+</body>
+</html>
+<script>
+  /**
+   * 基本的ajax请求
+   * 
+   * XMLHttpRequest
+   *  XMLHttpRequest （通常缩写为XHR）现在是一个相当古老的技术 - 它是在20世纪90年代后期由微软发明的，并且已经在相当长的时间内跨浏览器进行了标准化。
+   *  
+   *  let request = new XmlHttpRequest();
+   *  request.open('get', url);
+   * 
+   *  request.responseType = 'text';
+   *  request.onload = function() {
+   *    poemDisplay.textContent = request.response;
+   *  }
+   * 
+   *  request.send()
+   * */ 
+
+  let btn = document.querySelector('button');
+  btn.addEventListener('click', function() {
+    let request = new XMLHttpRequest();
+    request.open('get', 'https://www.baidu.com');
+    request.responseType = 'text';
+
+    request.onload = function() {
+      console.log(this.response);
+    }
+    request.send()
+  })
+    
+  
+
+
+  /**
+   * fetch 
+   *  Fetch API基本上是XHR的一个现代替代品——它是最近在浏览器中引入的，它使异步HTTP请求在JavaScript中更容易实现，对于开发人员和在Fetch之上构建的其他API来说都是如此。
+   * 
+  */
+  btn.addEventListener('click', function() {
+    fetch('https://www.baidu.com').then(function(text) {
+      console.log(text);
+    })
+  })
+  /**
+   * 关于promise
+   *  fetch(url).then(function(res) {
+   *    res.text().then(function(text) {
+   *      console.log(text)
+   *    })
+   *  })
+  */
+</script>

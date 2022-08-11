@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // JavaScript ( JS ) 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言
+  //  函数优先: 当一门编程语言的函数可以当成变量一样使用时， 则这门语言被称之为拥有头等函数
+  //  高阶函数（Higher-Order Function）：一个返回另外一个函数的函数被称为高阶函数。
+  // 用一个变量
+  const sayHello = function() {
+    return function() {
+      console.log('hello!');
+    }
+  }
+  const myFunc = sayHello();
+  myFunc()
+  sayHello()()
+
+  // 解析性代码
+  // JavaScript是轻量级解释型语言。浏览器接受到JavaScript代码，并以代码自身的文本格式运行它。
+  // 技术上，几乎所有 JavaScript 转换器都运用了一种叫做即时编译（just-in-time compiling）的技术；
+  // 当 JavaScript 源代码被执行时，它会被编译成二进制的格式，使代码运行速度更快。尽管如此，JavaScript 仍然是一门解释型语言，
+  // 因为编译过程发生在代码运行中，而非之前。
+
+  // 服务端代码 客户端代码
+
+  // async defer
+  
+</script>

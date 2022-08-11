@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  //内置对象Date是构造函数，用new创建对象,无参数时返回当前时间，可加参数返回特定时间
+  var now_time = new Date();
+  console.log(now_time);
+          
+  // 年月日之间可以用-或者/
+  var time_1 = new Date('2018-05-06 12:36:15');
+  var time_2 = new Date('2018/05/06');
+  console.log(time_1);
+  console.log(time_2);
+
+  // 格式化日期
+  //格式化日期- 年，月，日
+  var date = new Date(); // 实例化一个日期对象
+  var year = date.getFullYear();  // 返回当前日期年份
+  var month = date.getMonth() + 1;  //返回的是0-11，分别对应1-12月，所以接果+1才是正确的月数
+  year = year < 10? '0' + year: year ;
+  var dates = date.getDate();    // 返回几号
+  dates  = dates < 10? '0' + dates: dates ;
+  var day = date.getDay();   //返回的是0-6，分别对应星期天-星期六
+
+  var day_arr = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六',]
+  console.log('今天是：'+ year + '年' + month +  '月' + dates + '日' + day_arr[day]);
+
+  // 格式化时分秒
+  function getTime() {
+    var time = new Date()
+    var h = time.getHours()
+    h = h < 10 ? '0' + h: h
+    var m = time.getMinutes()
+    m = m < 10 ? '0' + m: m
+    var s = time.getSeconds()
+    s = s < 10 ? '0' + s : s
+
+    return h + ':' + m + ':' + s
+  }
+
+  console.log(getTime());
+
+  // 获取时间戳
+  //获取Date总的毫秒数(时间戳) ，是从1970年1月1号到当前的总的毫秒数 至于为什么是这个时间，感兴趣的可以百度看看，十分有趣
+  //1.通过 valueOf() 或者 getTime() 方法
+  var date = new Date();
+  console.log(date.valueOf());  //得到的是我们当前时间距离1970 1.1的总的毫秒数
+  console.log(date.getTime());
+
+  //2.简单的写法（最常用的写法）
+  var date = +new Date(); 
+  console.log(date);
+
+  //3.H5 新增的,ie9以下不适用
+  console.log(Date.now());
+
+
+
+</script>

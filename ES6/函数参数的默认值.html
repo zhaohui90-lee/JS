@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 函数参数的默认值
+  // 默认值一般放在参数的最后面 当参数没有被使用的时候 使用默认值
+  function add(a, b, c = 10) {
+    return a + b + c
+  }
+
+  console.log(add(10, 20));
+
+  // 和参数的解构赋值一起使用
+  function connect({
+    host = '127.0.0.1',
+    username = 'root',
+    password = '123456',
+    port = '3306'
+  }) {
+    console.log(host);
+    console.log(username);
+    console.log(password);
+    console.log(port);
+  }
+
+  connect({
+    host: 'localhost',
+    username: 'root',
+    password: 'root',
+  })
+</script>

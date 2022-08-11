@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 浅拷贝只拷贝一层 更深层次的拷贝只拷贝引用
+  // 深拷贝拷贝多层 每一层的数据都会拷贝
+  // ES6 浅拷贝的语法糖 Object.assign(target, ...sources) target 目标对象 sources 源对象
+  const target = {
+    a: 1,
+    b: 2
+  }
+  const source1 = {
+    b: 1,
+    c: 3,
+    obj: [
+      {
+        name: 'jack',
+        age: 20,
+        skill() {
+          console.log('paint...');
+        }
+      },
+      {
+        name: 'rose',
+        age: 21,
+        skill() {
+          console.log('dance...');
+        },
+        family: {
+          father: {
+            name: 'tom',
+            age: 40
+          },
+          mother: {
+            name: 'andy',
+            age: 39
+          }
+        }
+      }
+    ]
+  }
+
+  Object.defineProperty(source1, 'speak', {
+    value: 'speak',
+    enumerable: false
+  })
+
+  console.log(source1);
+  console.log(Object.keys(source1));
+
+  const source2 = {
+    d: 2,
+    e: 10
+  }
+  // const result = Object.assign(target, source1, source2)
+  const result = Object.assign(target, [source1, source2])
+  console.log(result);
+
+  // 深拷贝
+  var obj = {
+    name: 'jack',
+    msg: {
+      age: 18
+    },
+    color: ['red', 'blue']
+  }
+
+  var o = {}
+
+  // 拷贝方法
+  function deepCopy(newobj, source) {
+    for (const key in source) {
+      var item = source[key]
+      if (item instanceof Array) {
+        newobj[key] = []
+        deepCopy(newobj[key], item)
+      } else if(item instanceof Object){
+        newobj[key] = {}
+        deepCopy(newobj[key], item)
+      } else {
+        newobj[key] = item
+      }
+    }
+  }
+  deepCopy(o, obj)
+  console.log(o);
+  o.msg.age = 10
+  console.log(obj);
+</script>
